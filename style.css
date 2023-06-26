@@ -1,0 +1,23 @@
+.img-access{
+    width: 5%;
+}
+.img-banner{
+    width: 100%;
+}
+li ul{
+    justify-content: space-between;
+}
+.content-perdidos{
+    display: flex;
+    margin: auto;
+}
+.input-perdidos{
+   margin: auto;
+}
+.card-perdidos{
+    margin: auto;
+   
+}
+div.card.perdidos{
+    width: 15rem !important;
+}
