@@ -1,5 +1,5 @@
 export const navbar = `
-<img src="img/WhatsApp Image 2023-06-26 at 18.26.13.jpeg" alt="" class="img-banner">
+<img src="img/banner.jpeg" alt="" class="img-banner">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">Home</a>
@@ -16,7 +16,7 @@ export const navbar = `
                 <a class="nav-link" href="noticias.html">Noticias</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Adopciones</a>
+                <a class="nav-link" href="perritos.html">Adopciones</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="perdidos.html">Perdidos</a>

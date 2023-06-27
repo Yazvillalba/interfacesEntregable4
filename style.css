@@ -21,3 +21,8 @@ li ul{
 div.card.perdidos{
     width: 15rem !important;
 }
+#contenedor{
+    display: flex; 
+    flex-wrap: wrap;
+ 
+}
