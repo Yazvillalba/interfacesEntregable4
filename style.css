@@ -1,28 +1,86 @@
-.img-access{
+.img-access {
     width: 5%;
 }
-.img-banner{
+
+.img-banner {
     width: 100%;
 }
-li ul{
+
+li ul {
     justify-content: space-between;
 }
-.content-perdidos{
+
+.content-perdidos {
     display: flex;
     margin: auto;
 }
-.input-perdidos{
-   margin: auto;
-}
-.card-perdidos{
+
+.input-perdidos {
     margin: auto;
-   
 }
-div.card.perdidos{
+
+.card-perdidos {
+    margin: auto;
+
+}
+
+div.card.perdidos {
     width: 15rem !important;
 }
-#contenedor{
-    display: flex; 
+
+#contenedor {
+    display: flex;
     flex-wrap: wrap;
- 
+}
+
+/* LOGIN */
+.logo-login {
+    border: 2px solid;
+    border-radius: 50%;
+    width: 35%;
+    box-shadow: 1px 2px black;
+
+}
+
+.container-form {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+}
+
+.formulario {
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 2%;
+}
+
+.formulario input {
+    display: block;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 5%;
+
+}
+
+.formulario p {
+    margin-top: 5%;
+    font-size: smaller;
+}
+
+.button-login {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgba(0, 0, 255, 0.447);
 }

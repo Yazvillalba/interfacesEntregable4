@@ -1,5 +1,5 @@
 export const navbar = `
-<img src="img/banner.jpeg" alt="" class="img-banner">
+<img src="img/banner2.jpg" alt="" class="img-banner">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">Home</a>
@@ -28,7 +28,7 @@ export const navbar = `
                 <a class="nav-link" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img src="img/acceso.png" alt="" class="img-access"></a>
+                <a class="nav-link" href="login.html"><img src="img/acceso.png" alt="" class="img-access"></a>
             </li>
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
