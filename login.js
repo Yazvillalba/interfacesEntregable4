@@ -53,10 +53,14 @@ function iniciarSesion(e) {
     usuarios.forEach(user => {
         if(user.email === email && user.password === password){
             logueado = true;
+            if(user.role === "admin"){
+                window.location.href = 'admin.html'
+            } else {
+                window.location.href = 'index.html'
+            }
             console.log('logueado', logueado)
             console.log(window.location);
             // si se pudo loguear redirecciona al usuario al admin
-            window.location.href = 'admin.html'
             console.log("inicio de sesion exitoso");
         } 
         
