@@ -12,9 +12,9 @@ var elementos = [
         popoverTitulo: "Popover title 2",
         popoverContenido: "More amazing content!"
     }, {
-        nombre: "Otro Elemento",
+        nombre: "Bruno",
         imagenSrc: "img/perrito3.jpeg",
-        popoverTitulo: "Popover title 2",
+        popoverTitulo: "Bruno",
         popoverContenido: "More amazing content!"
     }, {
         nombre: "Otro Elemento",
