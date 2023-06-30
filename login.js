@@ -59,7 +59,6 @@ function iniciarSesion(e) {
                 window.location.href = 'index.html'
             }
             console.log('logueado', logueado)
-            console.log(window.location);
             // si se pudo loguear redirecciona al usuario al admin
             console.log("inicio de sesion exitoso");
         } 
@@ -113,7 +112,7 @@ const datos = [ // son los datos que van a estar cargados por defecto
 ];
 
 
-// siempre que se cargue el script de login (voy a estar en la pag de login)
+// siempre que se cargue el script de login (al cargar la pag de login)
 // quiero que se chequee que el usuario juan@apoa.com este cargado y sea admin
 function chequearJuan(){
 

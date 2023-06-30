@@ -1,3 +1,7 @@
+body {
+    font-family: Varela, Poppins, sans-serif;
+}
+
 .img-access {
     width: 5%;
 }
@@ -35,10 +39,10 @@ div.card.perdidos {
 
 /* LOGIN */
 .logo-login {
-    border: 2px solid;
+    /*! border: 2px solid; */
     border-radius: 50%;
     width: 35%;
-    box-shadow: 1px 2px black;
+    box-shadow: 3px 3px 5px 0 #afafaf;
 
 }
 
@@ -52,20 +56,23 @@ div.card.perdidos {
 
 .formulario {
     width: 400px;
-    padding: 1rem;
+    padding: 2.5rem;
     margin: 2rem;
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid #AFAFAF;
     border-radius: 2%;
+    box-shadow: 1px 5px 5px #AFAFAF;
 }
 
 .formulario input {
     display: block;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 1%;
     margin-bottom: 5%;
-    border-radius: 5%;
-
+    border-radius: 5px;
+    border: 1px solid #afafaf;
+    height: 40px;
+    padding: 10px;
 }
 
 .formulario p {
@@ -77,14 +84,23 @@ div.card.perdidos {
     font-size: 16px;
     line-height: 28px;
     padding: 8px 16px;
-    width: 100%;
-    min-height: 44px;
+    width: 55%;
+    /*! min-height: 44px; */
     border: unset;
     border-radius: 4px;
-    outline-color: rgb(84 105 212 / 0.5);
-    background-color: rgba(0, 0, 255, 0.447);
+    /*! outline-color: rgb(84 105 212 / 0.5); */
+    background-color: #769FDE;
+    color: white;
+    font-weight: 600;
 }
 
 .error-message{
     color: rgb(252, 65, 65);
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0rem;
+    align-items: start;
 }
