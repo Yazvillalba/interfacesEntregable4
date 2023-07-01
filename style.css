@@ -306,6 +306,7 @@ svg.bi-bi-search-heart{
     color: #769FDE;
 }
 
+<<<<<<< HEAD
 @media (min-width: 992px) {
     
     .menu{
@@ -318,3 +319,38 @@ svg.bi-bi-search-heart{
     }
 
 }
+=======
+
+
+
+
+/* footer */
+.footer{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.iconos {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    background-color: #4a4aee;
+    cursor: pointer;
+}
+>>>>>>> 12151a202db31ef9ac5154eb42429fae201d8e89
