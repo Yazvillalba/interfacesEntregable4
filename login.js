@@ -3,6 +3,8 @@
 import { escribirEnStorage, obtenerDeStorage } from "./utils.js";
 
 const errorElement = document.getElementsByClassName('error-message')[0];
+const errorLogin = document.getElementsByClassName('error-message')[1];
+
 const inputUsuarioLogin = document.getElementById("usuario");
 const inputPasswordLogin = document.getElementById("contrasena-login");
 
@@ -16,6 +18,7 @@ const btnIngresar = document.getElementById('button-login');
 const btnRegistro = document.getElementById('button-registro');
 
 
+
 function mostrarLogin(e) {
     document.getElementById("registro-form").style.display = "none";
     document.getElementById("login-form").style.display = "block";
@@ -25,19 +28,25 @@ function mostrarRegistro(e) {
     document.getElementById("registro-form").style.display = "block";
     document.getElementById("login-form").style.display = "none";
 }
-function mostrarMensajeExito() {
-    // const mensajeElement = document.createElement('p');
-    // mensajeElement.textContent = 'Usuario creado exitosamente';
-    // mensajeElement.classList.add('success-message');
-    // document.body.appendChild(mensajeElement);
-    errorElement.style.display = 'block';
-    errorElement.innerHTML = 'Usuario creado Exitosamente';
-    setTimeout(() => {
-    //   mensajeElement.remove();
-    errorElement.style.display = 'none';
-    }, 3000);
-  }
-  import { info } from "./Icons.js";
+function validarRegistro() {
+    const nombre = inputNombreRegistro.value;
+    const email = inputEmailRegistro.value;
+    const contrasena = inputPasswordRegistro.value;
+
+    if (!nombre || !email || !contrasena) {
+        errorElement.style.display = 'block';
+        errorElement.innerHTML = 'Por favor, completa todos los campos';
+        setTimeout(() => {
+            errorElement.style.display = 'none';
+        }, 3000);
+        return false;
+    }
+
+    return true;
+}
+
+
+import { info } from "./Icons.js";
 import { Toast } from "./Toast.js"
 
 const btn = document.getElementById('button-registro');
@@ -53,15 +62,18 @@ const triggerToast = (e) => {
     console.log('toastContainer', toastContainer)
     const toast = new Toast(toastContainer, "type is not being used", info, "Info", "This is an informative message u know.")
     toast.showUp();
-    
+
 }
 
 btn.addEventListener('click', triggerToast);
 function registrar(e) {
+    if (!validarRegistro()) {
+        return;
+    }
     const user = {
         email: inputEmailRegistro.value,
-        password:  inputPasswordRegistro.value,
-        nombre:  inputNombreRegistro.value,
+        password: inputPasswordRegistro.value,
+        nombre: inputNombreRegistro.value,
     }
 
     const usuarios = obtenerDeStorage('usuarios');
@@ -75,32 +87,44 @@ function registrar(e) {
 
 
 function iniciarSesion(e) {
+
     const email = inputUsuarioLogin.value;
-    const password =  inputPasswordLogin.value;
-    
+    const password = inputPasswordLogin.value;
+
     const usuarios = obtenerDeStorage('usuarios');
     let logueado = false;
-    usuarios.forEach(user => {
-        if(user.email === email && user.password === password){
-            logueado = true;
-            if(user.role === "admin"){
-                window.location.href = 'admin.html'
-            } else {
-                window.location.href = 'index.html'
-            }
-            console.log('logueado', logueado)
-            // si se pudo loguear redirecciona al usuario al admin
-            console.log("inicio de sesion exitoso");
-        } 
-        
-    });
-    
+    const error = {
+        error: false,
+        message: "" 
+    }
+    if (!email || !password) {
+        error.error = true;
+        error.message= 'Completa todos los campos';
 
-    if (!logueado){
-        errorElement.style.display = 'block';
-        errorElement.innerHTML = 'Usuario o contraseña incorrecta';
+    } else {
+        usuarios.forEach(user => {
+            if (user.email === email && user.password === password) {
+              
+                if (user.role === "admin") {
+                    window.location.href = 'admin.html'
+                } else {
+                    window.location.href = 'index.html'
+                }
+                console.log('logueado', logueado)
+                // si se pudo loguear redirecciona al usuario al admin
+                console.log("inicio de sesion exitoso");
+            } else{
+                error.error = true;
+                error.message = 'Usuario o contraseña incorrecta';
+            }
+
+        });
+    }
+    if (error.error) {
+        errorLogin.style.display = 'block';
+        errorLogin.innerHTML = error.message;
         setTimeout(() => {
-            errorElement.style.display = 'none';
+            errorLogin.style.display = 'none';
         }, 3000);
     }
 
@@ -127,7 +151,7 @@ btnRegistro.addEventListener('click', registrar)
 // para cada una de ellas (de acuerdo a lo cargado)
 
 const datos = [ // son los datos que van a estar cargados por defecto
-    {   
+    {
         "name": "Juan",
         email: "juan@apoa.com",
         password: "123",
@@ -144,13 +168,13 @@ const datos = [ // son los datos que van a estar cargados por defecto
 
 // siempre que se cargue el script de login (al cargar la pag de login)
 // quiero que se chequee que el usuario juan@apoa.com este cargado y sea admin
-function chequearJuan(){
+function chequearJuan() {
 
     let usuarios = obtenerDeStorage('usuarios');
     if (usuarios != null && usuarios.length !== 0) {
         console.log('usuarios[0]', usuarios[0])
-        if(usuarios[0].email != "juan@apoa.com" || usuarios[0].role != "admin"){
-            
+        if (usuarios[0].email != "juan@apoa.com" || usuarios[0].role != "admin") {
+
             // si no esta cargado como admin lo cargo con los datos hardcodeados
             usuarios[0] = datos[0];
             escribirEnStorage('usuarios', usuarios);
