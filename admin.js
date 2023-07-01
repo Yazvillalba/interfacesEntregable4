@@ -76,7 +76,7 @@ body.prepend(container)
 
 const triggerToast = (e) => {
     const toastContainer = document.querySelector('.toast-cont');
-    const toast = new Toast(toastContainer, "type is not being used", success, "Registro exitoso!", "Gracias por registrarte en nuestra base de datos.")
+    const toast = new Toast(toastContainer, "type is not being used", success, "Animalito agregado", "El ingreso fue registrado con éxito.")
     toast.showUp();
 }
 
