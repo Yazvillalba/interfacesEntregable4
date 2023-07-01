@@ -10,7 +10,16 @@ nav {
     top: 0;
 }
 
+p.card-text {
+    font-size: 30px;
+    margin-top: 3rem;
+}
 
+.home-card{
+    border: 0px solid white!important;
+    margin-top: 10rem!important;
+    margin-bottom: 10rem!important;
+}
 
 .menu{
     display: flex;  
