@@ -1,4 +1,5 @@
 // arreglo de objetos con la información de cada elemento
+import { escribirEnStorage, obtenerDeStorage } from "./utils.js";
 var elementos = [
     {
         nombre: "Firulo",
@@ -65,5 +66,33 @@ for (var i = 0; i < elementos.length; i++) {
     </div>
       
     `;
+}
+const mascotas=obtenerDeStorage("mascotas");
+if (mascotas!=null && mascotas.length>0){
+for (var i = 0; i < mascotas.length; i++) {
+    var mascota = mascotas[i];
+    html += `
+    <div class="wrapper">
+        <div class="cardPerdido">
+                    <div class="poster"><img src="${mascota.imagen}" alt="Location Unknown"></div>
+                    <div class="details">
+                        <h1>${mascota.seccion}</h1>
+                        <h2>${mascota.nombre}</h2>
+                        <div class="rating">
+                            <span>${mascota.edad}</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Cachorro</span>
+                            <span class="tag">Mestizo</span>
+                            <span class="tag">Chico</span>
+                        </div> 
+                        <button type="button" class="button-adoptar">Adoptar</button>
+                    </div>
+                   
+                </div>
+    </div>
+      
+    `;
+}
 }
 document.getElementById("contenedor").innerHTML = html;

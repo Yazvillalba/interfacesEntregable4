@@ -2,6 +2,7 @@ var btnFiltrar = document.querySelector('#boton');
 btnFiltrar.addEventListener("click", filtrarTarjetas);
 
 
+
 function filtrarTarjetas() {
     
     const tipoAdopcion = document.getElementById('tipo-adopcion').value.toLowerCase();

@@ -8,6 +8,7 @@ nav {
     margin-top: 0.5rem;
     position: sticky!important;
     top: 0;
+    z-index: 100;
 }
 
 p.card-text {
@@ -96,10 +97,15 @@ select {
     width: 100%;
     margin-top: 1%;
     margin-bottom: 5%;
+    padding-top: 1%;
     border-radius: 5px;
     border: 1px solid #afafaf;
     height: 40px;
-    padding: 10px;
+    padding-left: 10px;
+}
+.formulario input:focus, select:focus{
+    outline: none !important;
+    border: 2px solid #769FDE;
 }
 
 .formulario p {
@@ -132,32 +138,38 @@ select {
     align-items: start;
 }
 
-@media (min-width: 992px) {
-    
-    .menu{
-        display: flex;  
-        flex-direction: row-reverse;
-        align-items: start;
-    }
-}
+
 
 .searchContainer{
     margin: 2%;
-    padding-right: 2%;
-    
+    padding-right: 2%;    
     border-right: 3px solid rgba(138, 132, 132, 0.705);
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    
+    position: absolute;
+    z-index: 80;
+    background-color: white;    
+}
+svg.bi-bi-search-heart{
+    align-self: center;
 }
 
-.bi-bi-search-heart{
+#boton.bi-bi-search-heart{
+    margin-top: 2rem;
+    background-color: #769FDE;
+    width: 2rem;
+    height: 1.5rem;
     align-self: center;
-    margin: 10%;
+    box-shadow: 2px 3px 5px 0px #afafaf;
+    border-radius: 5px;
+    border: #8F8F8F;
+    display: flex;
+    justify-content: center;
 }
+
 
 .padre{
     display: flex;
@@ -292,4 +304,17 @@ select {
     background: #00000005;
     border-radius: 50px;
     color: #769FDE;
+}
+
+@media (min-width: 992px) {
+    
+    .menu{
+        display: flex;  
+        flex-direction: row-reverse;
+        align-items: start;
+    }
+    .searchContainer{
+        position: relative;
+    }
+
 }

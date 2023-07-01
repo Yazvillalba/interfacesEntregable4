@@ -50,6 +50,7 @@ function cargarMascota(mascota = {}){
     }
 }
 
+
 // para cargar una imagen de local storage
 // const img = document.getElementById('prueba'); // elemento <img> </img>
 // const masc = obtenerDeStorage('mascotas')[0];
