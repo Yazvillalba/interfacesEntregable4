@@ -34,6 +34,7 @@ div.card.perdidos {
 
 #contenedor {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -200,9 +201,7 @@ div.card.perdidos {
 .details {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    
-   
+    left: 0; 
     padding: 1.5em 1.5em 2em;
     background: rgba(49, 46, 46, 0.667);
     backdrop-filter: blur(16px) saturate(120%);
@@ -256,3 +255,8 @@ div.card.perdidos {
     border-radius: 50px;
 }
 
+.button-adoptar{
+    background: #00000005;
+    border-radius: 50px;
+    color: #769FDE;
+}
