@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="style2.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
+    <link rel="stylesheet" href="toast.css">
 </head>
 
 <body>
@@ -39,6 +40,8 @@
                 </div>
         </div>
     </nav>
+<body>
+    
     <div class="container-form">
         <div id="registro-form" class="formulario">
             <h2>Registro</h2>
@@ -60,7 +63,7 @@
                     <button id="reveal" disabled="disabled"><span></span></button>
                 </div>
             </div>
-
+            <p style="display: none;" class="error-message"> Error</p>
             <button id="button-registro" class="button-login">Guardar Registro</button>
             <p>Si aún no tienes una cuenta, por favor regístrate aquí</p>
             <button id="show-login" class="button-login">Ingresar</button>
@@ -82,18 +85,19 @@
             <button id="button-login" class="button-login">Ingresar</button>
             <button id="show-register" class="button-login" style="margin-top: 5%;">Volver al Registro</button>
             <p style="display: none;" class="error-message"> Error</p>
+            
         </div>
     </div>
     <footer class="footer">
         <div class="iconos">
             <div class="border-icon">
-                <i class='bx bxl-instagram'></i>
+                <a href="https://www.instagram.com/apoaa_olavarria/"><i class='bx bxl-instagram' ></i></a>
             </div>
             <div class="border-icon">
                 <i class='bx bxl-linkedin'></i>
             </div>
             <div class="border-icon">
-                <i class='bx bxl-facebook-circle'></i>
+                <a href="https://www.facebook.com/protectoraapoaa"><i  class='bx bxl-facebook-circle' ></i></a>
             </div>
         </div>
     </footer>
