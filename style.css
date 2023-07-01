@@ -142,14 +142,15 @@ select {
 
 .searchContainer{
     margin: 2%;
-    padding-right: 2%;    
+    
     border-right: 3px solid rgba(138, 132, 132, 0.705);
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    position: absolute;
+    position: fixed;
+    top: 20%;
     z-index: 80;
     background-color: white;    
 }
@@ -258,6 +259,49 @@ svg.bi-bi-search-heart{
 .cardPerdido:hover .details {
     bottom: 0;
 }
+.show{
+    display: none;
+}
+
+#ver{
+    display: block;
+    align-self: start;
+    margin-top: 2rem;
+    background-color: #769FDE;
+    width: 2rem;
+    height: 1.5rem;
+    position: sticky;
+    z-index: 90;
+    margin-left: 6%;
+    top: 20%;
+    box-shadow: 2px 3px 5px 0px #afafaf;
+    border-radius: 5px;
+    border: #8F8F8F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 4px solid rgba(22, 77, 218, 0.5);
+    width: 70px;
+    height: 70px;
+    margin: 30px auto;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+  
+  .spinner-container {
+    display: none;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    
+  }
 
 .details h1,
 .details h2 {
@@ -306,18 +350,6 @@ svg.bi-bi-search-heart{
     color: #769FDE;
 }
 
-@media (min-width: 992px) {
-    
-    .menu{
-        display: flex;  
-        flex-direction: row-reverse;
-        align-items: start;
-    }
-    .searchContainer{
-        position: relative;
-    }
-
-}
 /* footer */
 .footer{
     margin-top: 5px;
@@ -346,4 +378,32 @@ svg.bi-bi-search-heart{
 .border-icon:hover {
     background-color: #4a4aee;
     cursor: pointer;
+}
+
+@media (min-width:600px){
+    .searchContainer{
+        position: relative;
+       top: 0%;
+    }
+    #ver{
+        position:sticky;
+        top:50vh;
+    }
+}
+
+
+@media (min-width: 992px) {
+    
+    .menu{
+        display: flex;  
+        flex-direction: row-reverse;
+        align-items: start;
+    }
+    .searchContainer{
+        position: relative;
+    }
+    #ver{
+        display: none;    
+    }    
+
 }
