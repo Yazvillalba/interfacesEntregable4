@@ -12,7 +12,8 @@ nav {
 }
 
 p.card-text {
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 2rem;
     margin-top: 3rem;
 }
 
