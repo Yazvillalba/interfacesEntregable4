@@ -12,7 +12,7 @@ boton.addEventListener("click", function() {
   
   boton.innerHTML = `${activo ? svg2 : svg1}`
     activo = !activo;
-  contenido.classList.toggle("show");  
+  contenido.classList.toggle("no-Display");  
 });
 
 
@@ -49,11 +49,11 @@ function ocultarSpinner() {
 btnFiltrar.addEventListener("click", function() {
   mostrarSpinner();
   boton.click();
-  wrapper.classList.add("show");  
+  wrapper.classList.add("no-Display");  
   setTimeout(function() {  
     filtrarTarjetas();    
     ocultarSpinner();
-    wrapper.classList.remove("show");
+    wrapper.classList.remove("no-Display");
     
   }, 1500); // Tiempo de espera simulado: 2 segundos
 });

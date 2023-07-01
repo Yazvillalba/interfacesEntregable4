@@ -17,6 +17,15 @@ const btnShowLogin = document.getElementById('show-login');
 const btnIngresar = document.getElementById('button-login');
 const btnRegistro = document.getElementById('button-registro');
 
+var spinner = document.getElementById("spinner-container");
+function mostrarSpinner() {
+    spinner.style.display = "block";
+}
+function ocultarSpinner() {
+    spinner.style.display = "none";
+}
+
+
 
 
 function mostrarLogin(e) {
@@ -59,7 +68,7 @@ body.prepend(container)
 
 const triggerToast = (e) => {
     const toastContainer = document.querySelector('.toast-container');
-    console.log('toastContainer', toastContainer)
+
     const toast = new Toast(toastContainer, "type is not being used", info, "Info", "This is an informative message u know.")
     toast.showUp();
 
@@ -79,10 +88,16 @@ function registrar(e) {
     const usuarios = obtenerDeStorage('usuarios');
 
     escribirEnStorage('usuarios', [...usuarios, user]);
-    triggerToast()
+
+    mostrarSpinner();
+    setTimeout(() => {
+        ocultarSpinner();
+    }, 2000);
+    triggerToast();
+
     // para chequear que se guardo el usuario descomentar lo siguiente
     // const usuariosNuevos = obtenerDeStorage('usuarios');
-    // console.log('usuariosNuevos', usuariosNuevos)
+
 }
 
 
@@ -90,35 +105,43 @@ function iniciarSesion(e) {
 
     const email = inputUsuarioLogin.value;
     const password = inputPasswordLogin.value;
-
     const usuarios = obtenerDeStorage('usuarios');
     let logueado = false;
+
     const error = {
         error: false,
-        message: "" 
+        message: ""
     }
     if (!email || !password) {
         error.error = true;
-        error.message= 'Completa todos los campos';
+        error.message = 'Completa todos los campos';
 
     } else {
-        usuarios.forEach(user => {
+        let contador = 0;
+        while (!logueado && contador <= usuarios.length) {
+            const user = usuarios[contador];
             if (user.email === email && user.password === password) {
-              
-                if (user.role === "admin") {
-                    window.location.href = 'admin.html'
-                } else {
-                    window.location.href = 'index.html'
-                }
-                console.log('logueado', logueado)
-                // si se pudo loguear redirecciona al usuario al admin
-                console.log("inicio de sesion exitoso");
-            } else{
+                logueado = true;
+                mostrarSpinner();
+                setTimeout(() => {
+                    if (user.role === "admin") {
+                        window.location.href = 'admin.html'
+
+                    } else {
+                        window.location.href = 'index.html'
+                    }
+
+                    // si se pudo loguear redirecciona al usuario al admin
+
+                    ocultarSpinner();
+                }, 3000);
+                return;
+            } else {
                 error.error = true;
                 error.message = 'Usuario o contraseña incorrecta';
             }
-
-        });
+            contador++;
+        }
     }
     if (error.error) {
         errorLogin.style.display = 'block';
@@ -172,15 +195,13 @@ function chequearJuan() {
 
     let usuarios = obtenerDeStorage('usuarios');
     if (usuarios != null && usuarios.length !== 0) {
-        console.log('usuarios[0]', usuarios[0])
+
         if (usuarios[0].email != "juan@apoa.com" || usuarios[0].role != "admin") {
 
             // si no esta cargado como admin lo cargo con los datos hardcodeados
             usuarios[0] = datos[0];
             escribirEnStorage('usuarios', usuarios);
-            console.log("creando a juan");
-        } else {
-            console.log("juan esta creado");
+
         }
     } else {
         escribirEnStorage('usuarios', datos);

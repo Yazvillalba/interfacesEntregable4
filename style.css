@@ -13,14 +13,18 @@ nav {
 
 p.card-text {
     /* font-size: 30px; */
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
 }
+.card-title{
+    font-size: 1.5rem;
+}
+
 
 .home-card{
     border: 0px solid white!important;
-    margin-top: 10rem!important;
-    margin-bottom: 10rem!important;
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
 }
 
 .menu{
@@ -187,7 +191,7 @@ svg.bi-bi-search-heart{
 .row{
     box-shadow: 2px 5px 4px 4px #dfdfdf;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .wrapper {
@@ -264,7 +268,7 @@ svg.bi-bi-search-heart{
 .cardPerdido:hover .details {
     bottom: 0;
 }
-.show{
+.no-Display{
     display: none;
 }
 
@@ -398,6 +402,7 @@ svg.bi-bi-search-heart{
         position:sticky;
         top:50vh;
     }
+
 }
 
 

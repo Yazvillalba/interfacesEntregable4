@@ -12,6 +12,14 @@ const seccionSelect = document.getElementById("seccion");
 const btnAddMascota = document.getElementById('button-agregarMascota');
 
 btnAddMascota.addEventListener('click', guardar)
+var spinner = document.getElementById("spinner-container");
+function mostrarSpinner() {
+    spinner.style.display = "block";
+}
+function ocultarSpinner() {
+    spinner.style.display = "none";
+}
+
 
 function guardar(e) {
     const mascota = {
@@ -19,6 +27,12 @@ function guardar(e) {
         edad: inputEdadMascota.value,
         seccion: seccionSelect.value
     }
+    
+    mostrarSpinner();
+    setTimeout(() => {
+        
+        ocultarSpinner();
+    }, 2000);
 
     const imagen = imagenInput.files[0];
     const reader = new FileReader();
