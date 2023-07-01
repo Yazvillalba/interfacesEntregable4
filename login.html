@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,85 +37,90 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav" id="nav-list">
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav" id="nav-list">
+                </ul>
+            </div>
         </div>
     </nav>
-<body>
 
-    <div class="container-form">
-        <div id="registro-form" class="formulario">
-            <h2>Registro</h2>
-            <div>
-                <img src="img/logoOficial.jpeg" alt="" class="logo-login">
-            </div>
+    <body>
 
-            <div class="form-container">
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="nombre" placeholder="John">
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="john@example.com">
-                <label for="pw">Contraseña</label>
-                <div class="container-contraseña">
-                    <!-- <input id="pass" type="password" placeholder="password"> -->
-                    <input type="password" name="pw" id="contrasena">
-                    <span id="fakepass">Contraseña</span>
-                    <button id="reveal" disabled="disabled"><span></span></button>
+        <div class="container-form">
+            <div id="registro-form" class="formulario">
+                <h2>Registro</h2>
+                <div>
+                    <img src="img/logoOficial.jpeg" alt="" class="logo-login">
                 </div>
-            </div>
-            <p style="display: none;" class="error-message"> Error</p>
-            <button id="button-registro" class="button-login">Guardar Registro</button>
-            <p>Si aún no tienes una cuenta, por favor regístrate aquí</p>
-            <button id="show-login" class="button-login">Ingresar</button>
-        </div>
-        <div id="spinner-container" class="spinner-container">
-            <div id="spinner" class="spinner"></div>
-        </div>
 
-        <div id="login-form" class="formulario" style="display: none;">
-            <h2>Ingreso</h2>
-            <img src="img/logoOficial.jpeg" alt="" class="logo-login">
-            <div class="form-container">
-            <div class="form-container">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="usuario" placeholder="john@example.com">
-                <label for="pw">Contraseña</label>
-                <div class="container-contraseña">
-                    <input type="password" name="pw" id="contrasena-login" placeholder="Contraseña">
-                    <span id="fakepass" class="fak2">Contraseña</span>
-                    <button id="reveal" class="rev2" disabled="disabled"><span></span></button>
+                <div class="form-container">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="nombre" placeholder="John">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="john@example.com">
+                    <label for="pw">Contraseña</label>
+                    <div class="container-contraseña">
+                        <!-- <input id="pass" type="password" placeholder="password"> -->
+                        <input type="password" name="pw" id="contrasena">
+                        <span id="fakepass">Contraseña</span>
+                        <button id="reveal" disabled="disabled"><span></span></button>
+                    </div>
                 </div>
-            </div>
-            <button id="button-login" class="button-login">Ingresar</button>
-            <button id="show-register" class="button-login" style="margin-top: 5%;">Volver al Registro</button>
-            <p style="display: none;" class="error-message"> Error</p>
+                <p style="display: none;" class="error-message"> Error</p>
+                <button id="button-registro" class="button-login">Guardar Registro</button>
+                <p>Si aún no tienes una cuenta, por favor regístrate aquí</p>
+                <button id="show-login" class="button-login">Ingresar</button>
             </div>
             <div id="spinner-container" class="spinner-container">
                 <div id="spinner" class="spinner"></div>
             </div>
-    </div>
-    <footer class="footer">
-        <div class="iconos">
-            <div class="border-icon">
-                <a href="https://www.instagram.com/apoaa_olavarria/"><i class='bx bxl-instagram'></i></a>
-            </div>
-            <div class="border-icon">
-                <i class='bx bxl-linkedin'></i>
-            </div>
-            <div class="border-icon">
-                <a href="https://www.facebook.com/protectoraapoaa"><i class='bx bxl-facebook-circle'></i></a>
+
+            <div id="login-form" class="formulario" style="display: none;">
+                <h2>Ingreso</h2>
+                <img src="img/logoOficial.jpeg" alt="" class="logo-login">
+                <div class="form-container">
+                    <div class="form-container">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="usuario" placeholder="john@example.com">
+                        <label for="pw">Contraseña</label>
+                        <div class="container-contraseña">
+                            <input type="password" name="pw" id="contrasena-login" placeholder="Contraseña">
+                            <span id="fakepass" class="fak2">Contraseña</span>
+                            <button id="reveal" class="rev2" disabled="disabled"><span></span></button>
+                        </div>
+                    </div>
+                    <button id="button-login" class="button-login">Ingresar</button>
+                    <button id="show-register" class="button-login" style="margin-top: 5%;">Volver al Registro</button>
+                    <p style="display: none;" class="error-message"> Error</p>
+                </div>
+                <div id="spinner-container" class="spinner-container">
+                    <div id="spinner" class="spinner"></div>
+                </div>
             </div>
         </div>
-    </footer>
 
-    <script src="index.js" type="module"></script>
-    <script src="login.js" type="module"></script>
-    <script src="login2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+        <footer class="footer">
+            <div class="iconos">
+                <div class="border-icon">
+                    <a href="https://www.instagram.com/apoaa_olavarria/"><i class='bx bxl-instagram'></i></a>
+                </div>
+                <div class="border-icon">
+                    <i class='bx bxl-linkedin'></i>
+                </div>
+                <div class="border-icon">
+                    <a href="https://www.facebook.com/protectoraapoaa"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+        </footer>
 
-</body>
+        <script src="index.js" type="module"></script>
+        <script src="login.js" type="module"></script>
+        <script src="login2.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+            crossorigin="anonymous"></script>
+
+    </body>
 
 </html>
