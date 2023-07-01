@@ -59,7 +59,7 @@ for (var i = 0; i < elementos.length; i++) {
                             <span class="tag">Mestizo</span>
                             <span class="tag">Chico</span>
                         </div> 
-                        <button type="button" class="button-adoptar">Adoptar</button>
+                       
                     </div>
                    
                 </div>
