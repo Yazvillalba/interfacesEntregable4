@@ -12,7 +12,8 @@ nav {
 }
 
 p.card-text {
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 2rem;
     margin-top: 3rem;
 }
 
@@ -183,7 +184,11 @@ svg.bi-bi-search-heart{
 
 
 
-
+.row{
+    box-shadow: 2px 5px 4px 4px #dfdfdf;
+    border-radius: 10px;
+    padding: 3rem;
+}
 
 .wrapper {
     position: relative;    
@@ -360,6 +365,7 @@ svg.bi-bi-search-heart{
     display: flex;
     justify-content: space-around;
     margin: auto;
+
 }
 
 .border-icon {
@@ -378,6 +384,9 @@ svg.bi-bi-search-heart{
 .border-icon:hover {
     background-color: #4a4aee;
     cursor: pointer;
+}
+.border-icon i{
+    color: black;
 }
 
 @media (min-width:600px){
