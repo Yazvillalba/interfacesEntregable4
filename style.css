@@ -288,7 +288,7 @@ svg.bi-bi-search-heart{
     background-color: #769FDE;
     width: 2rem;
     height: 1.5rem;
-    position: sticky;
+    position: fixed;
     z-index: 90;
     margin-left: 6%;
     top: 20%;
