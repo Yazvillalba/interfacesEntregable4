@@ -328,6 +328,7 @@ svg.bi-bi-search-heart{
     display: flex;
     justify-content: space-around;
     margin: auto;
+
 }
 
 .border-icon {
@@ -346,4 +347,7 @@ svg.bi-bi-search-heart{
 .border-icon:hover {
     background-color: #4a4aee;
     cursor: pointer;
+}
+.border-icon i{
+    color: black;
 }
