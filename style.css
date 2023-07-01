@@ -65,7 +65,8 @@ div.card.perdidos {
     box-shadow: 1px 5px 5px #AFAFAF;
 }
 
-.formulario input {
+.formulario input,
+select {
     display: block;
     width: 100%;
     margin-top: 1%;

@@ -42,8 +42,6 @@ function registrar(e) {
     // console.log('usuariosNuevos', usuariosNuevos)
 }
 
-
-
 function iniciarSesion(e) {
     const email = inputUsuarioLogin.value;
     const password =  inputPasswordLogin.value;
