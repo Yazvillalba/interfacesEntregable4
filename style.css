@@ -306,7 +306,6 @@ svg.bi-bi-search-heart{
     color: #769FDE;
 }
 
-<<<<<<< HEAD
 @media (min-width: 992px) {
     
     .menu{
@@ -319,11 +318,6 @@ svg.bi-bi-search-heart{
     }
 
 }
-=======
-
-
-
-
 /* footer */
 .footer{
     margin-top: 5px;
@@ -353,4 +347,3 @@ svg.bi-bi-search-heart{
     background-color: #4a4aee;
     cursor: pointer;
 }
->>>>>>> 12151a202db31ef9ac5154eb42429fae201d8e89
