@@ -2,8 +2,33 @@ body {
     font-family: Varela, Poppins, sans-serif;
 }
 
+nav {
+    border-bottom: 1px  solid #8F8F8F;
+    border-top: 1px  solid #8F8F8F;
+    margin-top: 0.5rem;
+    position: sticky!important;
+    top: 0;
+}
+
+p.card-text {
+    font-size: 30px;
+    margin-top: 3rem;
+}
+
+.home-card{
+    border: 0px solid white!important;
+    margin-top: 10rem!important;
+    margin-bottom: 10rem!important;
+}
+
+.menu{
+    display: flex;  
+    flex-direction: column;
+    align-items: start;
+}
+
 .img-access {
-    width: 5%;
+    width: 1.5rem;
 }
 
 .img-banner {
@@ -65,7 +90,8 @@ div.card.perdidos {
     box-shadow: 1px 5px 5px #AFAFAF;
 }
 
-.formulario input {
+.formulario input,
+select {
     display: block;
     width: 100%;
     margin-top: 1%;
@@ -106,6 +132,15 @@ div.card.perdidos {
     align-items: start;
 }
 
+@media (min-width: 992px) {
+    
+    .menu{
+        display: flex;  
+        flex-direction: row-reverse;
+        align-items: start;
+    }
+}
+
 .searchContainer{
     margin: 2%;
     padding-right: 2%;
@@ -131,8 +166,6 @@ div.card.perdidos {
     width: 100%;  
     
 }
-
-
 
 
 

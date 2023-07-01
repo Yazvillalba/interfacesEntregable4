@@ -17,18 +17,41 @@ function guardar(e) {
     const mascota = {
         nombre: inputNombreMascota.value,
         edad: inputEdadMascota.value,
-        imagen: imagenInput.files[0].name,
         seccion: seccionSelect.value
     }
 
+    const imagen = imagenInput.files[0];
+    const reader = new FileReader();
+    
+    if (imagen) {
+        reader.readAsDataURL(imagen);
+    } else {
+        mascota.imagen = "";
+        cargarMascota(mascota)
+    }
+
+    reader.addEventListener("load", function () {
+        
+        // convertir la imagen a stream y setearla como atributo
+        // de mascota
+        mascota.imagen = reader.result;
+        cargarMascota(mascota);
+
+    }, false);
+}
+
+function cargarMascota(mascota = {}){
     const mascotas = obtenerDeStorage('mascotas');
-    console.log(mascota);
+    
     if(mascotas != null && mascotas.length > 0){
-       escribirEnStorage('mascotas', [...mascotas, mascota]); 
+        escribirEnStorage('mascotas', [...mascotas, mascota]); 
     } else{
         escribirEnStorage('mascotas', [mascota]); 
-
     }
-    
-    
 }
+
+// para cargar una imagen de local storage
+// const img = document.getElementById('prueba'); // elemento <img> </img>
+// const masc = obtenerDeStorage('mascotas')[0];
+
+// img.src = masc.image;
