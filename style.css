@@ -182,7 +182,11 @@ svg.bi-bi-search-heart{
 
 
 
-
+.row{
+    box-shadow: 2px 5px 4px 4px #dfdfdf;
+    border-radius: 10px;
+    padding: 3rem;
+}
 
 .wrapper {
     position: relative;    

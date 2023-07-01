@@ -25,7 +25,38 @@ function mostrarRegistro(e) {
     document.getElementById("registro-form").style.display = "block";
     document.getElementById("login-form").style.display = "none";
 }
+function mostrarMensajeExito() {
+    // const mensajeElement = document.createElement('p');
+    // mensajeElement.textContent = 'Usuario creado exitosamente';
+    // mensajeElement.classList.add('success-message');
+    // document.body.appendChild(mensajeElement);
+    errorElement.style.display = 'block';
+    errorElement.innerHTML = 'Usuario creado Exitosamente';
+    setTimeout(() => {
+    //   mensajeElement.remove();
+    errorElement.style.display = 'none';
+    }, 3000);
+  }
+  import { info } from "./Icons.js";
+import { Toast } from "./Toast.js"
 
+const btn = document.getElementById('button-registro');
+
+const body = document.querySelector('.container-form');
+const container = document.createElement('div');
+container.classList.add('toast-container')
+
+body.prepend(container)
+
+const triggerToast = (e) => {
+    const toastContainer = document.querySelector('.toast-container');
+    console.log('toastContainer', toastContainer)
+    const toast = new Toast(toastContainer, "type is not being used", info, "Info", "This is an informative message u know.")
+    toast.showUp();
+    
+}
+
+btn.addEventListener('click', triggerToast);
 function registrar(e) {
     const user = {
         email: inputEmailRegistro.value,
@@ -36,11 +67,12 @@ function registrar(e) {
     const usuarios = obtenerDeStorage('usuarios');
 
     escribirEnStorage('usuarios', [...usuarios, user]);
-
+    triggerToast()
     // para chequear que se guardo el usuario descomentar lo siguiente
     // const usuariosNuevos = obtenerDeStorage('usuarios');
     // console.log('usuariosNuevos', usuariosNuevos)
 }
+
 
 function iniciarSesion(e) {
     const email = inputUsuarioLogin.value;
