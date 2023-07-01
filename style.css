@@ -149,9 +149,15 @@ select {
     flex-direction: column;
     margin: 2rem 0rem;
     align-items: start;
+    width: 100%;
 }
 
-
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
 .searchContainer{
     margin: 2%;
@@ -271,6 +277,7 @@ svg.bi-bi-search-heart{
     transition: .3s;
     color: #fff;
     z-index: 2;
+    width: 100%;
 }
 
 .cardPerdido:hover .details {
@@ -310,13 +317,17 @@ svg.bi-bi-search-heart{
   }
   
   .spinner-container {
+    --height: 60vh;
     display: none;
     align-self: center;
     justify-self: center;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: var(--height);
+    /* posiciona el spinner al medio (o lo intenta)*/
+    position: relative;
+    top: calc(var(--height) *0.3);
     
   }
 

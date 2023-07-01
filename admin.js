@@ -1,5 +1,7 @@
 "use strict";
 
+import { success } from "./Icons.js";
+import { Toast } from "./Toast.js"
 import { escribirEnStorage, obtenerDeStorage } from "./utils.js";
 
 const errorElement = document.getElementsByClassName('error-message')[0];
@@ -13,13 +15,22 @@ const btnAddMascota = document.getElementById('button-agregarMascota');
 
 btnAddMascota.addEventListener('click', guardar)
 var spinner = document.getElementById("spinner-container");
+
 function mostrarSpinner() {
     spinner.style.display = "block";
 }
+
 function ocultarSpinner() {
     spinner.style.display = "none";
 }
 
+function ocultarForm() {
+    document.getElementById("agregar-mascota").style.display = "none";
+}
+
+function mostrarForm(){
+    document.getElementById("agregar-mascota").style.display = "block";
+}
 
 function guardar(e) {
     const mascota = {
@@ -28,10 +39,13 @@ function guardar(e) {
         seccion: seccionSelect.value
     }
     
+    ocultarForm();
     mostrarSpinner();
+
     setTimeout(() => {
-        
         ocultarSpinner();
+        triggerToast();
+        mostrarForm();
     }, 2000);
 
     const imagen = imagenInput.files[0];
@@ -52,6 +66,18 @@ function guardar(e) {
         cargarMascota(mascota);
 
     }, false);
+}
+
+const body = document.querySelector('.container-form');
+const container = document.createElement('div');
+container.classList.add('toast-cont')
+
+body.prepend(container)
+
+const triggerToast = (e) => {
+    const toastContainer = document.querySelector('.toast-cont');
+    const toast = new Toast(toastContainer, "type is not being used", success, "Registro exitoso!", "Gracias por registrarte en nuestra base de datos.")
+    toast.showUp();
 }
 
 function cargarMascota(mascota = {}){

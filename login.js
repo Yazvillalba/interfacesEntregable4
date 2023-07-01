@@ -1,6 +1,9 @@
 "use strict";
 
 import { escribirEnStorage, obtenerDeStorage } from "./utils.js";
+import { success } from "./Icons.js";
+import { Toast } from "./Toast.js"
+
 
 const errorElement = document.getElementsByClassName('error-message')[0];
 const errorLogin = document.getElementsByClassName('error-message')[1];
@@ -18,25 +21,43 @@ const btnIngresar = document.getElementById('button-login');
 const btnRegistro = document.getElementById('button-registro');
 
 var spinner = document.getElementById("spinner-container");
+
+// pantalla actual para saber, luego de ocultar ambas por el spinner, cual volver a poner;
+// valores: ["registro", "login"]
+let pantallaActual = "registro";
+
 function mostrarSpinner() {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("registro-form").style.display = "none";
     spinner.style.display = "block";
 }
-function ocultarSpinner() {
+
+function ocultarSpinner(pantalla = '') {
     spinner.style.display = "none";
+    document.getElementById(`${pantalla}-form`).style.display = "block";
 }
 
 
+function ocultarLogin(e){
+    document.getElementById("login-form").style.display = "none";
+}
+
+function ocultarRegistro(e){
+    document.getElementById("registro-form").style.display = "none";
+}
 
 
 function mostrarLogin(e) {
-    document.getElementById("registro-form").style.display = "none";
+    ocultarRegistro(e);
     document.getElementById("login-form").style.display = "block";
 }
 
 function mostrarRegistro(e) {
     document.getElementById("registro-form").style.display = "block";
-    document.getElementById("login-form").style.display = "none";
+    ocultarLogin(e);
 }
+
+
 function validarRegistro() {
     const nombre = inputNombreRegistro.value;
     const email = inputEmailRegistro.value;
@@ -47,7 +68,7 @@ function validarRegistro() {
         errorElement.innerHTML = 'Por favor, completa todos los campos';
         setTimeout(() => {
             errorElement.style.display = 'none';
-        }, 3000);
+        }, 5000);
         return false;
     }
 
@@ -55,30 +76,26 @@ function validarRegistro() {
 }
 
 
-import { info } from "./Icons.js";
-import { Toast } from "./Toast.js"
 
-const btn = document.getElementById('button-registro');
+// const btn = document.getElementById('button-registro');
 
 const body = document.querySelector('.container-form');
 const container = document.createElement('div');
-container.classList.add('toast-container')
+container.classList.add('toast-cont')
 
 body.prepend(container)
 
 const triggerToast = (e) => {
-    const toastContainer = document.querySelector('.toast-container');
-
-    const toast = new Toast(toastContainer, "type is not being used", info, "Info", "This is an informative message u know.")
+    const toastContainer = document.querySelector('.toast-cont');
+    const toast = new Toast(toastContainer, "type is not being used", success, "Registro exitoso!", "Gracias por registrarte en nuestra base de datos.")
     toast.showUp();
-
 }
 
-btn.addEventListener('click', triggerToast);
 function registrar(e) {
     if (!validarRegistro()) {
         return;
     }
+    pantallaActual = 'registro';
     const user = {
         email: inputEmailRegistro.value,
         password: inputPasswordRegistro.value,
@@ -91,9 +108,9 @@ function registrar(e) {
 
     mostrarSpinner();
     setTimeout(() => {
-        ocultarSpinner();
+        ocultarSpinner(pantallaActual);
+        triggerToast();
     }, 2000);
-    triggerToast();
 
     // para chequear que se guardo el usuario descomentar lo siguiente
     // const usuariosNuevos = obtenerDeStorage('usuarios');
@@ -102,7 +119,7 @@ function registrar(e) {
 
 
 function iniciarSesion(e) {
-
+    pantallaActual = "login"
     const email = inputUsuarioLogin.value;
     const password = inputPasswordLogin.value;
     const usuarios = obtenerDeStorage('usuarios');
@@ -124,14 +141,13 @@ function iniciarSesion(e) {
                 logueado = true;
                 mostrarSpinner();
                 setTimeout(() => {
+                    // si se pudo loguear redirecciona al usuario segun sea o no admin
                     if (user.role === "admin") {
                         window.location.href = 'admin.html'
 
                     } else {
                         window.location.href = 'index.html'
                     }
-
-                    // si se pudo loguear redirecciona al usuario al admin
 
                     ocultarSpinner();
                 }, 3000);
@@ -148,7 +164,7 @@ function iniciarSesion(e) {
         errorLogin.innerHTML = error.message;
         setTimeout(() => {
             errorLogin.style.display = 'none';
-        }, 3000);
+        }, 5000);
     }
 
 }
