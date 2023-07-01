@@ -34,6 +34,7 @@ div.card.perdidos {
 
 #contenedor {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -201,9 +202,7 @@ div.card.perdidos {
 .details {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    
-   
+    left: 0; 
     padding: 1.5em 1.5em 2em;
     background: rgba(49, 46, 46, 0.667);
     backdrop-filter: blur(16px) saturate(120%);
@@ -239,15 +238,6 @@ div.card.perdidos {
     display: flex;
     gap: .25em;
 }
-
-/* .details .rating i {
-    color: #e3c414;
-}
-
-.details .rating span {
-    margin-left: 0.25em;
-} */
-
 .details .tags {
     display: flex;
     gap: .375em;
@@ -262,36 +252,8 @@ div.card.perdidos {
     border-radius: 4px;
     border-radius: 50px;
 }
-
-/* .details .desc {
-    color: #fff;
-    opacity: .8;
-    line-height: 1.5;
-    margin-bottom: 1em;
+.button-adoptar{
+    background: #00000005;
+    border-radius: 50px;
+    color: #769FDE;
 }
-
-.details .cast h3 {
-    margin-bottom: .5em;
-}
-
-.details .cast ul {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    width: 100%;
-}
-
-.details .cast ul li {
-    list-style: none;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1.5px solid #fff;
-}
-
-.details .cast ul li img {
-    width: 100%;
-    height: 100%;
-} */
