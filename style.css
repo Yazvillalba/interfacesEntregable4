@@ -221,7 +221,8 @@ svg.bi-bi-search-heart{
 
 .cardPerdido {
     position: relative;
-    width: 47vh;
+    /* width: 47vh; */
+    width: 40vh;
     height: 47vh; 
     background: #000;
     border-radius: 18px;
@@ -294,7 +295,7 @@ svg.bi-bi-search-heart{
     background-color: #769FDE;
     width: 2rem;
     height: 1.5rem;
-    position: sticky;
+    position: fixed;
     z-index: 90;
     margin-left: 6%;
     top: 20%;
