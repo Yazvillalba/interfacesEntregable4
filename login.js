@@ -135,7 +135,7 @@ function iniciarSesion(e) {
 
     } else {
         let contador = 0;
-        while (!logueado && contador <= usuarios.length) {
+        while (!logueado && contador < usuarios.length) {
             const user = usuarios[contador];
             if (user.email === email && user.password === password) {
                 logueado = true;
@@ -152,11 +152,12 @@ function iniciarSesion(e) {
                     ocultarSpinner();
                 }, 3000);
                 return;
-            } else {
-                error.error = true;
-                error.message = 'Usuario o contraseña incorrecta';
-            }
+            } 
             contador++;
+        }
+        if(!logueado){
+            error.error = true;
+            error.message = 'Usuario o contraseña incorrecta';
         }
     }
     if (error.error) {
