@@ -3,8 +3,8 @@ body {
 }
 
 nav {
-    border-bottom: 1px  solid #8F8F8F;
-    border-top: 1px  solid #8F8F8F;
+    border-bottom: 2px  solid #8F8F8F;
+    border-top: 2px  solid #8F8F8F;
     margin-top: 0.5rem;
     position: sticky!important;
     top: 0;
@@ -390,6 +390,7 @@ svg.bi-bi-search-heart{
 
 /* footer */
 .footer{
+    border-top: 2px solid #AFAFAF;
     margin-top: 5px;
     margin-bottom: 5px;
 }
