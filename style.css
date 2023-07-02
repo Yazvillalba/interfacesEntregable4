@@ -392,7 +392,11 @@ svg.bi-bi-search-heart{
 .footer{
     border-top: 2px solid #AFAFAF;
     margin-top: 5px;
-    margin-bottom: 5px;
+    max-height: max-content;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
 }
 .iconos {
     width: 200px;
