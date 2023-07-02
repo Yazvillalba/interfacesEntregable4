@@ -161,18 +161,27 @@ select {
 
 .searchContainer{
     margin: 2%;
-    
+    width: 90%;
     border-right: 3px solid rgba(138, 132, 132, 0.705);
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     position: fixed;
     top: 20%;
     z-index: 80;
     background-color: white;    
 }
+
+.search-inputs-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+}
+
 svg.bi-bi-search-heart{
     align-self: center;
 }
@@ -180,8 +189,8 @@ svg.bi-bi-search-heart{
 #boton.bi-bi-search-heart{
     margin-top: 2rem;
     background-color: #769FDE;
-    width: 2rem;
-    height: 1.5rem;
+    width: 5rem;
+    height: 2.5rem;
     align-self: center;
     box-shadow: 2px 3px 5px 0px #afafaf;
     border-radius: 5px;
@@ -293,8 +302,8 @@ svg.bi-bi-search-heart{
     align-self: start;
     margin-top: 2rem;
     background-color: #769FDE;
-    width: 2rem;
-    height: 1.5rem;
+    width: 3.5rem;
+    height: 2rem;
     position: fixed;
     z-index: 90;
     margin-left: 6%;
@@ -379,41 +388,6 @@ svg.bi-bi-search-heart{
     color: #769FDE;
 }
 
-@media (min-width: 992px) {
-    
-    .menu{
-        display: flex;  
-        flex-direction: row-reverse;
-        align-items: start;
-    }
-    .searchContainer{
-        position: relative;
-    }
-
-    .logo-banner{
-        top: 6rem;
-        left: 2rem;
-        width: 10rem !important;
-    }
-
-    .navbar-brand{
-        margin-left: 2%;
-        font-size: 30px!important;
-    }
-
-    .nav-link{
-        display: inline;
-    }
-
-    .nav-item{
-        font-size: 20px
-    }
-
-    img.img-access{
-        width: 30px;
-    }
-
-}
 /* footer */
 .footer{
     margin-top: 5px;
@@ -449,13 +423,23 @@ svg.bi-bi-search-heart{
 }
 
 @media (min-width:600px){
+
     .searchContainer{
         position: relative;
-       top: 0%;
+        top: 0%;
+        justify-content: start;
+        width: 40vw;
     }
+    
+    .search-inputs-container{
+        width: 100%;
+        position: relative;
+        top: 10%;
+    }
+
     #ver{
         position:sticky;
-        top:50vh;
+        top:40vh;
     }
 
 }
@@ -468,12 +452,56 @@ svg.bi-bi-search-heart{
         flex-direction: row-reverse;
         align-items: start;
     }
+
+    .searchContainer{
+        position: relative;
+        justify-content: center;
+        height: 100%;
+        width: 30vw;
+    }
+
+    #ver{
+        position: absolute;
+        top: 80%;
+        left: -3%;
+    }    
+
+    .wrapper{
+        flex-grow: 2;
+    }
+       
+    .menu{
+        display: flex;  
+        flex-direction: row-reverse;
+        align-items: start;
+    }
     .searchContainer{
         position: relative;
     }
-    #ver{
-        display: none;    
-    }    
+
+    .logo-banner{
+        top: 6rem;
+        left: 2rem;
+        width: 10rem !important;
+    }
+
+    .navbar-brand{
+        margin-left: 2%;
+        font-size: 30px!important;
+    }
+
+    .nav-link{
+        display: inline;
+    }
+
+    .nav-item{
+        font-size: 20px
+    }
+
+    img.img-access{
+        width: 30px;
+    }
+
 
 }
 
