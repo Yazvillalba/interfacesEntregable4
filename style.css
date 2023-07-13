@@ -1,5 +1,5 @@
 body {
-    font-family: Varela, Poppins, sans-serif;
+    font-family: Varela, Poppins, sans-serif!important;
 }
 
 nav {
@@ -427,6 +427,12 @@ svg.bi-bi-search-heart{
     color: black;
 }
 
+#logout{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
 @media (min-width:600px){
 
     .searchContainer{
@@ -447,6 +453,15 @@ svg.bi-bi-search-heart{
         top:40vh;
     }
 
+    .navbar{
+        justify-content: center;
+    }
+
+    .nav-container{
+        align-items: center;
+        width: 75%;
+        display: flex;
+    }
 }
 
 

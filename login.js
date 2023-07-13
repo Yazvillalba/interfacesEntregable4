@@ -77,7 +77,6 @@ function validarRegistro() {
 
 
 
-// const btn = document.getElementById('button-registro');
 
 const body = document.querySelector('.container-form');
 const container = document.createElement('div');
@@ -139,6 +138,8 @@ function iniciarSesion(e) {
             const user = usuarios[contador];
             if (user.email === email && user.password === password) {
                 logueado = true;
+                //TODO agregar el usuario  como usuarioLogueado a localStorage
+                escribirEnStorage('usuarioLogueado', user);
                 mostrarSpinner();
                 setTimeout(() => {
                     // si se pudo loguear redirecciona al usuario segun sea o no admin

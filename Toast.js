@@ -10,7 +10,7 @@ export class Toast {
         this.showUp();
         this.element.addEventListener("click", this);
         this.container.appendChild(this.element);
-        this.autoRemove();
+        // this.autoRemove();
     }
 
     createToast() {
