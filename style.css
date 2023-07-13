@@ -395,8 +395,8 @@ svg.bi-bi-search-heart{
     border-top: 2px solid #AFAFAF;
     margin-top: 5px;
     max-height: max-content;
-    /* position: fixed; */
-    bottom: 0px;
+    position: sticky;
+    /* bottom: 0; */
     width: 100%;
     background-color: white;
 }
