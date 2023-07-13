@@ -395,7 +395,7 @@ svg.bi-bi-search-heart{
     border-top: 2px solid #AFAFAF;
     margin-top: 5px;
     max-height: max-content;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     width: 100%;
     background-color: white;
@@ -444,6 +444,19 @@ svg.bi-bi-search-heart{
     margin-right: 1rem;
 }
 
+
+.navbar-brand{
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    padding-left: 1rem;
+}
+
+#nav-list{
+    width: inherit;
+    justify-content: space-around;
+    padding-left: 1rem;
+}
+
 @media (min-width:600px){
 
     .searchContainer{
@@ -477,6 +490,14 @@ svg.bi-bi-search-heart{
     .contenedor-home{
         width: 75%;
         margin: auto;
+    }
+
+    #nav-list{
+        padding: 0;
+    }
+
+    .navbar-brand{
+        padding: 0;
     }
     
 }
@@ -560,19 +581,6 @@ search-inputs-container -- margin-top: rem
 }
 
 
-
-
-.navbar-brand{
-    font-weight: 700;
-    letter-spacing: 0.5rem;
-    padding: 1rem;
-}
-
-#nav-list{
-    width: inherit;
-    justify-content: space-around;
-    padding: 1rem;
-}
 
 .navbar-collapse{
     width: 100%;
