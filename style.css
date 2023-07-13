@@ -75,6 +75,8 @@ div.card.perdidos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 75%;
+    margin: auto;    
 }
 
 /* LOGIN */
@@ -433,6 +435,15 @@ svg.bi-bi-search-heart{
     text-transform: uppercase;
 }
 
+.nav-container{
+    width: 100%;
+}
+
+.contenedor-logo-boton{
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
 @media (min-width:600px){
 
     .searchContainer{
@@ -462,7 +473,19 @@ svg.bi-bi-search-heart{
         width: 75%;
         display: flex;
     }
+
+    .contenedor-home{
+        width: 75%;
+        margin: auto;
+    }
+    
 }
+
+/*
+button left: 10%;
+search-inputs-container -- top:10%
+search-inputs-container -- margin-top: rem
+*/
 
 
 @media (min-width: 992px) {
@@ -476,7 +499,7 @@ svg.bi-bi-search-heart{
     .searchContainer{
         position: relative;
         justify-content: center;
-        height: 100%;
+        height: 75%;
         width: 30vw;
     }
 
@@ -542,12 +565,13 @@ svg.bi-bi-search-heart{
 .navbar-brand{
     font-weight: 700;
     letter-spacing: 0.5rem;
-
+    padding: 1rem;
 }
 
 #nav-list{
     width: inherit;
     justify-content: space-around;
+    padding: 1rem;
 }
 
 .navbar-collapse{

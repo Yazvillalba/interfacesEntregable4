@@ -8,7 +8,8 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     margin-top: 10px;
 }
 #slider {
@@ -136,6 +137,10 @@
 }
 
 @media screen and (max-width: 460px){
+    #container-slider{
+        width: 100%;
+    }
+
 	.content_slider h2 {
 	    font-size: 15pt !important;
 	}
